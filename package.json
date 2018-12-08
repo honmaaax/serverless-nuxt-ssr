@@ -1,0 +1,24 @@
+{
+  "name": "ragate-nuxt-ssr",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Tatsuyoshi Mizuno <m.tatsuyoshi@ragate.co.jp>",
+  "license": "MIT",
+  "scripts": {
+    "serve": "nuxt",
+    "build": "nuxt build",
+    "deploy": "npm run build && sls deploy",
+    "dgen": "sls create_domain",
+    "remove": "npm run build && sls remove"
+  },
+  "dependencies": {
+    "aws-serverless-express": "^3.3.5",
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
+    "nuxt": "^2.3.4",
+    "serverless-domain-manager": "^2.6.6"
+  },
+  "devDependencies": {
+    "serverless-apigw-binary": "^0.4.4"
+  }
+}

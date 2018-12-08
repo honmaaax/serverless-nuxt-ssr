@@ -1,0 +1,28 @@
+service: nuxt-ssr
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: v1
+  region: ap-northeast-1
+
+functions:
+  nuxt:
+    handler: handler.nuxt
+    events:
+      - http: ANY {proxy+} # いかなるリクエストも同一処理
+      - http: ANY /
+
+plugins:
+  - serverless-apigw-binary # AGW→フロントへバイナリを返却する際に利用
+  - serverless-domain-manager # sls create_domainを実行するために必要
+
+custom:
+  apigwBinary:
+    types:
+      - '*/*'
+  customDomain:
+    domainName: nuxtssr.ragate.co.jp
+    basePath: ''
+    stage: ${self:provider.stage}
+    createRoute53Record: true
