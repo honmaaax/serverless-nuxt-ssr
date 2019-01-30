@@ -19,7 +19,8 @@ const binaryMimeTypes = [
   'text/javascript',
   'text/plain',
   'text/text',
-  'text/xml'
+  'text/xml',
+  'image/x-icon'
 ]
 const server = awsServerlessExpress.createServer(app, null, binaryMimeTypes)
 
