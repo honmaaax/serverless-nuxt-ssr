@@ -1,4 +1,10 @@
+const environment = process.env.NODE_ENV
+const envSet = require(`./src/env/${environment}.js`)
+
 module.exports = {
+  mode: 'universal',
+  dev: environment === 'dev',
+  env: envSet,
   head: {
     title: 'Nuxt Serverless Side Rendering',
     meta: [
@@ -8,8 +14,24 @@ module.exports = {
     ]
   },
 
-  build: {
-    vendor: ['axios'] // ページごとのJSではなく共通のJSファイルに取り込まるように
+  plugins: [
+    '@/plugins/sample'
+  ],
+
+  modules: [
+    '@nuxtjs/style-resources',
+  ],
+
+  css: [
+    '@/assets/css/normalize.css'
+  ],
+
+  styleResources: {
+    scss: [
+      '@/assets/scss/global.scss'
+    ],
+    less: [],
+    stylus: []
   },
 
   srcDir: 'src/',
@@ -18,21 +40,4 @@ module.exports = {
     gzip: false //Lambda上でサーバサイドレンダリングする場合はfalseにすること
   },
 
-  router: {
-    base: '/', //AGWのルートパスのANY処理をServerless.ymlで定義できないので仮指定しておく Todo: ルートパスでAny処理しておく
-    routes: [
-      {
-        name: 'index',
-        path: '/',
-        component: 'pages/index.vue'
-      },
-      {
-        name: 'example',
-        path: '/example',
-        component: 'pages/Example.vue'
-      }
-    ]
-  },
-
-  dev: false //ステージング等々の環境で切り替えてなにかする場合は有効に、プログラムから干渉する時に用いる
 }
