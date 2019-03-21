@@ -6,14 +6,23 @@
 # package install
 yarn
 
-# start dev localy dev server
-yarn server
-
 # create custom domain to route53
 yarn dgen
 
+# build 
+yarn build
+yarn build:stg
+yarn build:prd
+
+# start dev localy dev server
+yarn serve
+yarn serve:stg
+yarn serve:prd
+
 # deploy to Aws
 yarn deploy
+yarn deploy:stg
+yarn deploy:prd
 
 # remove from Aws...
 yarn remove
@@ -23,15 +32,8 @@ yarn remove
 
 You need to catch up the following.
 
-- nuxt 
-- serverless.yml
-- Aws Apigateway / Lambda / Route53
+- [Nuxt](https://nuxtjs.org/) 
+- [Aws Serverless Framework](https://serverless.com/)
+- [Amazon Web Service](https://aws.amazon.com/)
 
 And before using, you need following step.
-
-- create Iam account of ra-developers (please ask to author)
-- your os setup for aws Credentials (By Aws Credentials commands)
-
-## Authors
-
-* **Tatsuyoshi Mizuno of Ragate inc.** 
