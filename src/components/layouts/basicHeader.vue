@@ -1,14 +1,9 @@
 <template>
-  <header class="header"></header>
+  <header class="BasicHeader"></header>
 </template>
 
 <script>
-  export default {
-    name: "basicHeader"
-  }
+export default {
+  name: 'BasicHeader',
+}
 </script>
-
-<style scoped lang="scss">
-  .header {
-  }
-</style>

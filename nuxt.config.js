@@ -26,18 +26,23 @@ module.exports = {
     '@/assets/css/normalize.css'
   ],
 
-  styleResources: {
-    scss: [
-      '@/assets/scss/global.scss'
-    ],
-    less: [],
-    stylus: []
-  },
-
   srcDir: 'src/',
 
   performance: {
     gzip: false //Lambda上でサーバサイドレンダリングする場合はfalseにすること
   },
+
+  build: {
+    extractCSS: true,
+    postcss: {
+      plugins: [
+        require('postcss-preset-env')({
+          features: {
+            'nesting-rules': true,
+          }
+        }),
+      ]
+    },
+  }
 
 }

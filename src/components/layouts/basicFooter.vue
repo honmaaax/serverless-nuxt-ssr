@@ -1,14 +1,9 @@
 <template>
-  <footer class="footer"></footer>
+  <footer class="BasicFooter"></footer>
 </template>
 
 <script>
-  export default {
-    name: "basicFooter"
-  }
+export default {
+  name: 'BasicFooter',
+}
 </script>
-
-<style scoped lang="scss">
-  .footer {
-  }
-</style>

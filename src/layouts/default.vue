@@ -1,19 +1,26 @@
 <template>
   <div>
-    <basic-header/>
+    <BasicHeader />
     <main>
       <nuxt/>
     </main>
-    <basic-footer/>
+    <BasicFooter />
   </div>
 </template>
 
 <script>
-  import basicHeader from '@/components/layouts/basicHeader'
-  import basicFooter from '@/components/layouts/basicFooter'
+import BasicHeader from '@/components/layouts/BasicHeader'
+import BasicFooter from '@/components/layouts/BasicFooter'
 
-  export default {
-    name: "default",
-    components: {basicHeader, basicFooter}
-  }
+export default {
+  name: 'default',
+  components: {BasicHeader, BasicFooter}
+}
 </script>
+
+<style>
+:root {
+  --main-color: #424242;
+}
+</style>
+
