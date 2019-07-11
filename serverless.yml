@@ -24,7 +24,7 @@ custom:
     types:
       - '*/*'
   customDomain:
-    domainName: nuxtssr.ragate.co.jp
+    domainName: xxxxxxxxxxxxxxx.com # TODO
     basePath: ''
     stage: ${self:provider.stage}
     createRoute53Record: true
