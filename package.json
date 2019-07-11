@@ -1,8 +1,8 @@
 {
-  "name": "ragate-nuxt-ssr",
+  "name": "ra-nuxt-aws-serverless",
   "version": "1.0.0",
-  "description": "",
-  "author": "Ragate inc. <m.tatsuyoshi@ragate.co.jp>",
+  "description": "Ragate Nuxt.js SSR Template with AWS lambda",
+  "author": "Ragate",
   "license": "MIT",
   "scripts": {
     "build": "cross-env NODE_ENV=\"dev\" nuxt build",
@@ -11,9 +11,8 @@
     "serve": "cross-env NODE_ENV=\"dev\" nuxt",
     "serve:stg": "cross-env NODE_ENV=\"stg\" nuxt",
     "serve:prd": "cross-env NODE_ENV=\"prd\" nuxt",
-    "deploy": "yarn build && sls deploy",
-    "deploy:stg": "yarn build:stg && sls deploy",
-    "deploy:prd": "yarn build:prd && sls deploy",
+    "deploy:stg": "yarn build:stg && NODE_ENV=\"stg\" sls deploy",
+    "deploy:prd": "yarn build:prd && NODE_ENV=\"prd\" sls deploy",
     "dgen": "sls create_domain",
     "remove": "yarn run build && sls remove"
   },
@@ -21,6 +20,7 @@
     "@nuxtjs/style-resources": "^0.1.2",
     "aws-serverless-express": "^3.3.5",
     "express": "^4.16.4",
+    "normalize.css": "^8.0.1",
     "nuxt": "^2.8.1",
     "serverless-domain-manager": "^2.6.6"
   },

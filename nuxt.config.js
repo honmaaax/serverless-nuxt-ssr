@@ -23,13 +23,13 @@ module.exports = {
   ],
 
   css: [
-    '@/assets/css/normalize.css'
+    'normalize.css/normalize.css',
   ],
 
   srcDir: 'src/',
 
   performance: {
-    gzip: false //Lambda上でサーバサイドレンダリングする場合はfalseにすること
+    gzip: false // Set `false` if you use SSR on AWS Lambda
   },
 
   build: {
