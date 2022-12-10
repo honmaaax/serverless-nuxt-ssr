@@ -19,7 +19,7 @@
   "dependencies": {
     "@nuxtjs/style-resources": "^0.1.2",
     "aws-serverless-express": "^3.3.5",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.8.1",
     "serverless-domain-manager": "^2.6.6"
